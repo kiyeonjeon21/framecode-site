@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Framecode is a desktop motion design IDE for prompt-first animation, image generation, and editable video source.">
+    <meta property="og:title" content="Framecode">
+    <meta property="og:description" content="A desktop creative IDE for motion design, image generation, and video workflows.">
+    <meta property="og:image" content="assets/framecode-icon.png">
+    <title>Framecode</title>
+    <link rel="icon" href="assets/framecode-icon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Framecode home">
+        <img src="assets/framecode-icon.png" alt="" width="36" height="36">
+        <span>Framecode</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#workflow">Workflow</a>
+        <a href="#download">Download</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Desktop alpha for macOS</p>
+          <h1>Motion design, edited like code and directed with AI.</h1>
+          <p class="lead">
+            Framecode turns prompts, generated images, and editable motion source
+            into a desktop workflow for product videos, launch reels, and UI motion.
+          </p>
+          <div class="hero-actions" id="download">
+            <a class="button primary" id="downloadButton" href="https://download.framecode.dev/releases/0.1.0-alpha.2/Framecode-0.1.0-alpha.2-darwin-arm64.dmg" aria-describedby="downloadMeta">
+              Download for macOS
+            </a>
+            <a class="button secondary" href="#workflow">
+              See workflow
+            </a>
+          </div>
+          <p class="download-meta" id="downloadMeta">macOS Apple Silicon alpha. Signed and notarized.</p>
+        </div>
+
+        <div class="product-shot" aria-label="Framecode motion editor preview">
+          <div class="app-window">
+            <div class="window-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="app-grid">
+              <aside class="layers">
+                <div class="panel-title">Scenes & Layers</div>
+                <div class="metric-row">
+                  <div><strong>0:10</strong><span>Duration</span></div>
+                  <div><strong>18</strong><span>Layers</span></div>
+                </div>
+                <div class="layer selected">
+                  <span>cinematic editor background</span>
+                  <small>shape / nativeTimeline</small>
+                </div>
+                <div class="layer">
+                  <span>generated abstract code visual</span>
+                  <small>image / 1.2s - 8.8s</small>
+                </div>
+                <div class="layer">
+                  <span>glowing Framecode title</span>
+                  <small>text / 0.0s - 6.0s</small>
+                </div>
+              </aside>
+              <section class="canvas">
+                <div class="stage">
+                  <img src="assets/framecode-icon.png" alt="" width="86" height="86">
+                  <div>
+                    <strong>Framecode</strong>
+                    <span>render it</span>
+                  </div>
+                </div>
+                <div class="timeline" aria-hidden="true">
+                  <div class="time-track wide"></div>
+                  <div class="time-track mid"></div>
+                  <div class="time-track short"></div>
+                </div>
+              </section>
+              <aside class="studio">
+                <div class="panel-title">Studio</div>
+                <div class="tabs">
+                  <span>Create</span>
+                  <span>Edit</span>
+                  <span>Image</span>
+                </div>
+                <p>Create an 8 second social reel with bold kinetic text and a generated background.</p>
+                <button type="button">Create Motion</button>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow" id="workflow">
+        <article>
+          <span>01</span>
+          <h2>Start with intent</h2>
+          <p>Pick a preset or describe the motion piece you want to make.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Edit visually</h2>
+          <p>Move layers on the canvas, tune timing, and keep source editable.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Bring your agent</h2>
+          <p>Use BYOK, Codex, Claude Code, HyperFrames, and local export paths.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>Framecode alpha</span>
+      <a href="mailto:hello@framecode.dev">hello@framecode.dev</a>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
