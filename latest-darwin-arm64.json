@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0-alpha.1",
+  "platform": "darwin-arm64",
+  "artifacts": {
+    "dmg": {
+      "name": "Framecode-0.1.0-alpha.1-darwin-arm64.dmg",
+      "url": "https://github.com/kiyeonjeon21/framecode-site/releases/download/v0.1.0-alpha.1/Framecode-0.1.0-alpha.1-darwin-arm64.dmg",
+      "size": 238944624,
+      "sha256": "a62d88e7aae02040b4e67eacc1212a73678a2e4ce8fe9560d24dbe74fe66e3d6"
+    }
+  }
+}

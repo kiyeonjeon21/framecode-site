@@ -1,0 +1,8 @@
+{
+  "version": "0.1.0-alpha.1",
+  "platforms": {
+    "darwin-arm64": {
+      "manifest": "https://framecode.dev/latest-darwin-arm64.json"
+    }
+  }
+}

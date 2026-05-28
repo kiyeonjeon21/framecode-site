@@ -1,4 +1,7 @@
-const manifestUrl = "https://download.framecode.dev/latest-darwin-arm64.json";
+const manifestUrls = [
+  "latest-darwin-arm64.json",
+  "https://download.framecode.dev/latest-darwin-arm64.json",
+];
 const button = document.querySelector("#downloadButton");
 const meta = document.querySelector("#downloadMeta");
 const fallbackHref = button?.href;
@@ -10,12 +13,7 @@ async function hydrateDownload() {
   }
 
   try {
-    const response = await fetch(manifestUrl, { cache: "no-store" });
-    if (!response.ok) {
-      throw new Error(`Manifest returned ${response.status}`);
-    }
-
-    const release = await response.json();
+    const release = await fetchFirstManifest();
     const dmg = release?.artifacts?.dmg;
 
     if (!dmg?.url) {
@@ -24,12 +22,30 @@ async function hydrateDownload() {
 
     button.href = dmg.url;
     button.textContent = `Download ${release.version}`;
-    meta.textContent = `macOS Apple Silicon, ${formatBytes(dmg.size)}. Signed and notarized.`;
+    meta.textContent = `macOS Apple Silicon, ${formatBytes(dmg.size)}.`;
   } catch {
     button.href = fallbackHref;
     button.textContent = "Download for macOS";
     meta.textContent = fallbackMeta;
   }
+}
+
+async function fetchFirstManifest() {
+  let lastError;
+
+  for (const url of manifestUrls) {
+    try {
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Manifest returned ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError ?? new Error("No manifest URL configured");
 }
 
 function formatBytes(bytes) {

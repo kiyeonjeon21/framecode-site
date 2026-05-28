@@ -2,17 +2,28 @@
 
 Static landing page for Framecode.
 
-## Download Source
+## Domain
 
-The download button defaults to a versioned Cloudflare R2 DMG URL and upgrades
-itself from:
+GitHub Pages serves the site at:
 
 ```text
-https://download.framecode.dev/latest-darwin-arm64.json
+https://framecode.dev
 ```
 
-That manifest is uploaded by the private Framecode release workflow after the
-signed and notarized macOS artifact is mirrored to Cloudflare R2.
+Configure the apex domain DNS with GitHub Pages `A` records, and optionally
+point `www.framecode.dev` to `kiyeonjeon21.github.io`.
+
+## Download Source
+
+The download button defaults to the public GitHub release asset and upgrades
+itself from the same-origin manifest:
+
+```text
+https://framecode.dev/latest-darwin-arm64.json
+```
+
+When Cloudflare R2 is ready, the private Framecode release workflow can mirror
+the signed and notarized macOS artifact to R2 and update this manifest URL.
 
 If `framecode.dev` fetches a manifest from `download.framecode.dev`, configure
 R2 CORS for that origin. The direct DMG link still works without CORS.
