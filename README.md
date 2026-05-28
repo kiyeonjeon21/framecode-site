@@ -13,6 +13,23 @@ https://framecode.dev
 Configure the apex domain DNS with GitHub Pages `A` records, and optionally
 point `www.framecode.dev` to `kiyeonjeon21.github.io`.
 
+For Cloudflare DNS, add these records with proxy disabled:
+
+```text
+Type  Name  Value
+A     @     185.199.108.153
+A     @     185.199.109.153
+A     @     185.199.110.153
+A     @     185.199.111.153
+AAAA  @     2606:50c0:8000::153
+AAAA  @     2606:50c0:8001::153
+AAAA  @     2606:50c0:8002::153
+AAAA  @     2606:50c0:8003::153
+CNAME www   kiyeonjeon21.github.io
+```
+
+After DNS resolves, enable HTTPS enforcement in the GitHub Pages settings.
+
 ## Download Source
 
 The download button defaults to the public GitHub release asset and upgrades
